@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Timer</title>
+
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+<div class="wrapper">
+    <audio id="alarm-tone" src="Music/Alarm.mp3" controls></audio>
+    <div class="display-flex-col-center" id="main-box">
+        <h2>Multiple Timers App</h2>
+
+        <div id="timer-div" class="timer-div">
+            <div class="display-flex-row-center column gap-2rem">
+                <label for="time-count" id="set-time"><pre>Set Time:</pre></label>
+                <div class="display-flex-row-center" id="">
+                    <input type="number" id="hour" placeholder="hh" min="0">
+                    <p>:</p>
+                    <input type="number" id="min" placeholder="mm" min="0">
+                    <p>:</p>
+                    <input type="number" id="sec" placeholder="ss" min="0">
+                </div>
+                <button type="submit" id="set-btn">Set</button>
+            </div> 
+        </div>
+
+
+        <div id="current-timers-btn">Current Timers</div>
+
+        <div id="timers-list" class="display-flex-col-center gap-2rem">
+            <div id="current-timers">You have no timers currently</div>
+            
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+
+</html>

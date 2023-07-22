@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 24px; 
+    background-color: #1D1D23;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.timer-div * {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    background-color: #34344A;
+}
+
+#main-box {
+    padding: 1rem;
+    gap: 2rem;
+}
+
+#time-count {
+    justify-content: space-between;
+}
+
+
+#time-count-finished p {
+    background-color: #F0F757;
+    color: #34344A;
+    padding-right: 1rem;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+#time-count-active p {
+    background-color: #34344A;
+    color: white;
+    padding-left: 1rem;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#time-count #hour, #time-count #min, #time-count #sec {
+    text-decoration-line: underline;
+}
+
+#time-count-active #hour, #time-count-active #min, #time-count-active #sec {
+    text-decoration-line: none;
+}
+
+#current-timers-btn {
+    background-color: #39393E;
+    border-radius: 26px;
+    padding: 0.5rem 3.5rem;
+    font-weight: 500;
+}
+
+#current-timers {
+    font-weight: 400;
+}
+
+#set-time {
+    background-color: #34344A;
+    font-size: 24px;
+}
+
+#set-btn {
+    background-color: #F0F757;
+    color: black;
+    font-size: 24px;
+    font-weight: 400;
+    border-radius: 26px;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    cursor: pointer;
+}
+
+#set-btn-finished {
+    background-color: #34344A;
+    color: white;
+    font-weight: 400;
+    border-radius: 26px;
+    padding: 0.4rem 1.2rem;    
+    cursor: pointer;
+}
+
+.timer-div-finished, .timer-box-finished{
+    background-color: #F0F757;
+    border-radius: 20px;
+}
+#set-time-finished {
+    background-color: #F0F757;
+    color: #F0F757;
+}
+
+
+input {
+    background-color: #34344A;
+    font-size: 24px;
+    border: none;
+    width: 50px;
+    padding: 0;
+    text-decoration: underline;
+}
+input::placeholder{
+    color: white;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:focus {
+    outline:none;
+}
+
+.gap-2rem {
+    gap: 1rem;
+    padding: 0.7rem 1rem;
+}
+
+.display-flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.display-flex-col-center {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px){
+    * {
+        font-size: 16px;
+    }
+    .column{
+        flex-direction: column;
+    }
+    .gap-2rem {
+        gap: 0.5rem;
+    }
+}
