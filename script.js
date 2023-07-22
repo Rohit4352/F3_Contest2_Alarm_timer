@@ -113,7 +113,7 @@ function handleTimer(timer) {
                     <div id="set-btn-finished" onClick="deleteAlarm(${timer.name})">Stop</div>
                 </div>
                 `;
-
+                stopTimerMusic();
                 playMusic();
             }
         }
@@ -126,6 +126,7 @@ function deleteAlarm(elementId) {
     timers.splice(elementId - 1, 1);
     alarms--;
     console.log(alarms);
+    stopTimerMusic();
     stopMusic();
 }
 
@@ -146,18 +147,21 @@ function noAlarmOnScreen() {
 
 function playMusic() {
     console.log('music played');
-    musicElement.pause();
     audioElement.play();
+}
+
+function stopMusic() {
+    console.log('music stoped');
+    audioElement.pause();
+    audioElement.currentTime = 0;
 }
 
 function playTimerMusic() {
     musicElement.play();
 }
-
-function stopMusic() {
-    console.log('music stopd');
-    audioElement.pause();
-    audioElement.currentTime = 0;
+function stopTimerMusic() {
+    musicElement.pause();
+    musicElement.currentTime = 0;
 }
 
 setInterval(noAlarmOnScreen, 100);

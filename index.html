@@ -26,11 +26,11 @@
             <div class="display-flex-row-center column gap-2rem">
                 <label for="time-count" id="set-time"><pre>Set Time:</pre></label>
                 <div class="display-flex-row-center" id="">
-                    <input type="number" id="hour" placeholder="hh" min="0">
+                    <input type="number" id="hour" placeholder="hh" min="0" onKeyPress="if(this.value.length==3) return false;">
                     <p>:</p>
-                    <input type="number" id="min" placeholder="mm" min="0">
+                    <input type="number" id="min" placeholder="mm" min="0" onKeyPress="if(this.value.length==2) return false;">
                     <p>:</p>
-                    <input type="number" id="sec" placeholder="ss" min="0">
+                    <input type="number" id="sec" placeholder="ss" min="0" onKeyPress="if(this.value.length==2) return false;">
                 </div>
                 <button type="submit" id="set-btn">Set</button>
             </div> 
