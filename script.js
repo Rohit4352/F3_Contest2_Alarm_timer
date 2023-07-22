@@ -3,6 +3,9 @@
 const no_alarm_msg = document.getElementById('current-timers');
 const audioElement = document.getElementById('alarm-tone');
 audioElement.style.display = 'none';
+
+const musicElement = document.getElementById('music_tone');
+musicElement.style.display = 'none';
 // buttons
 const set_alarm_btn = document.getElementById('set-btn');
 
@@ -31,20 +34,20 @@ set_alarm_btn.addEventListener('click', (event) => {
     ifValidTimer(event, min, sec);
 });
 
-    function ifValidTimer(event, min, sec) {
-        console.log('if valid timer func run');
-        // startCountdown();
+function ifValidTimer(event, min, sec) {
+    console.log('if valid timer func run');
+    // startCountdown();
 
-        if (min >= 0 && min < 60 && sec >= 0 && sec < 60) {
-            // valid time
-            // console.log(event);
-            // Call this function to start the countdown
-            // startCountdown();
-            timers.push({name:timers.length + 1, duration: seconds});
-            console.log(timers);
-            initializeTimers(timers[timers.length - 1]);
-        }
-        else alert('Please enter valid time!! \n HH:MM:SS \n0<MM,SS<60');
+    if (min >= 0 && min < 60 && sec >= 0 && sec < 60) {
+        // valid time
+        // console.log(event);
+        // Call this function to start the countdown
+        // startCountdown();
+        timers.push({name:timers.length + 1, duration: seconds});
+        console.log(timers);
+        initializeTimers(timers[timers.length - 1]);
+    }
+    else alert('Please enter valid time!! \n HH:MM:SS \n0<MM,SS<60');
 }
 
 const timersList = document.getElementById('timers-list');
@@ -93,6 +96,7 @@ function handleTimer(timer) {
     updateTimerDisplay(timer);
     timer.interval = setInterval(function() {
         timer.duration--;
+        playTimerMusic();
         updateTimerDisplay(timer);
         if (timer.duration <= 0) {
             clearInterval(timer.interval);
@@ -142,7 +146,12 @@ function noAlarmOnScreen() {
 
 function playMusic() {
     console.log('music played');
+    musicElement.pause();
     audioElement.play();
+}
+
+function playTimerMusic() {
+    musicElement.play();
 }
 
 function stopMusic() {
